@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         DatabaseManager db = new DatabaseManager();
+        db.connect();
+        
         InventoryManager manager = new InventoryManager(db);
 
         while (true) {
@@ -17,7 +19,7 @@ public class Main {
             if (choice == 1) {
                 System.out.print("ID: ");
                 int id = scanner.nextInt();
-                scanner.nextLine(); // consume newline
+                scanner.nextLine(); 
                 System.out.print("Name: ");
                 String name = scanner.nextLine();
                 System.out.print("Quantity: ");
